@@ -1,0 +1,44 @@
+JAVASCRIPT EVENTS HANDLING:
+HTML: events.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events</title>
+    <script src="events.js"></script>
+</head>
+<body>
+<h2>JavaScript Events Example</h2>
+<h3>1. Click Event</h3>
+<button onclick="clickEvent()">
+Click Me
+</button>
+<hr>
+<h3>2. Mouse Events(onmouseover and onmouseout)</h3>
+<p id="text"    onmouseover="mouseOver()"   onmouseout="mouseOut()">
+Move and keep your mouse cursor on the text.
+</p>
+<hr>
+<h3>3. Change Event when select items</h3>
+
+<select id="course" onchange="changeEvent()">
+    <option>Select Course</option>
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JavaScript</option>
+</select>
+
+<hr>
+<h3>4. Key Up Event--to display the input text</h3>
+
+<input type="text" id="name" onkeyup="keyUpEvent()" placeholder="Type your name">
+<p id="result"></p>
+<hr>
+
+<h3>5. Submit Event</h3>
+
+<form onsubmit="submitEvent()">
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
