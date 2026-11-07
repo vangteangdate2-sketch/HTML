@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 24px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #4a90e2;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #357abd;
+        }
+
+        .message {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .forgot-password {
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: blueviolet;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+            text-transform: uppercase;
+            text-rendering: optimizeLegibility;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>"Logo University"</h2>
+        <h2>Account Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            
+            <a href="https://en.wikipedia.org/wiki/Banana" class="forgot-password">Forgot Password</a>
+            <button type="submit" class="btn-submit">Log In</button>
+            <button>Cancel</button>
+        </form>
+        
+        <div id="messageBox" class="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission browser behavior (reloading the page)
+            event.preventDefault(); 
+            
+            const usernameInput = document.getElementById('username').value.trim();
+            const passwordInput = document.getElementById('password').value;
+            const messageBox = document.getElementById('messageBox');
+            
+            // Hardcoded dummy credentials for frontend demonstration
+            const correctUsername = "admin";
+            const correctPassword = "password123";
+            
+            if (usernameInput === correctUsername && passwordInput === correctPassword) {
+                messageBox.textContent = "Login successful! Redirecting...";
+                messageBox.className = "message success";
+                
+                // Optional: Redirect the user to a dashboard or landing page
+                // window.location.href = "dashboard.html";
+            } else {
+                messageBox.textContent = "Invalid username or password.";
+                messageBox.className = "message error";
+            }
+        });
+    </script>
+
+</body>
+</html>
